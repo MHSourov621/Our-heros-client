@@ -36,7 +36,7 @@ const Navbar = () => {
                 {
                     user ? (
                         <>
-                            {console.log(user)}
+                            {/* {console.log(user)} */}
                             <div className=' user-image flex'>
                                 {user.photoURL && <img className='w-12 rounded-full mr-4' src={user.photoURL} alt="" />}
                                 <p className='mr-4 hidden user-name'>{user.displayName}</p>

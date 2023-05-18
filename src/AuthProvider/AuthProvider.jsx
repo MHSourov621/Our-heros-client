@@ -38,9 +38,15 @@ const AuthProvider = ({ children }) => {
             })
     }
 
-    const profile = (name, photo) => {
-        return updateProfile(auth.currentUser, {
-            displayName: name, photoURL: photo
+    const updateProfile = (currentUser, name) => {
+        updateProfile(currentUser, {
+            displayName: name
+        })
+        .then(() => {
+            console.log("user update");
+        })
+        .catch(error => {
+            console.log(error);
         })
     }
 
@@ -61,7 +67,7 @@ const AuthProvider = ({ children }) => {
         emailLogin,
         googleLogin,
         logout,
-        profile
+        updateProfile
 
     }
     return (

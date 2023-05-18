@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Register = () => {
-    const { createUser, profile, user } = useContext(AuthContext);
+    const { createUser, updateProfile, user } = useContext(AuthContext);
     const [error, setError] = useState('');
 
 
@@ -24,6 +24,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
             const user = result.user;
+            console.log(user);
         })
         .catch(err => {
             // console.log(err.message);
