@@ -1,8 +1,11 @@
-import React from 'react';
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import React, { useContext } from 'react';
+import { FaGoogle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
+    const {user} = useContext(AuthContext)
+    console.log(user);
     return (
         <div>
             <div className="hero">
