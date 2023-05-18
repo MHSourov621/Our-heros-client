@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Navbar = () => {
+    const { user, logout } = useContext(AuthContext)
     return (
         <div className="navbar md:p-8 bg-base-200">
             <div className="navbar-start">
@@ -22,13 +24,32 @@ const Navbar = () => {
                     <li className='mr-8 hover:text-orange-400'><Link to="/">Home</Link></li>
                     <li className='mr-8 hover:text-orange-400'><Link to="/allToys">All Toys</Link> </li>
                     <li className='mr-8 hover:text-orange-400'><Link to="/Blogs">Blogs</Link></li>
+                    {
+                        user && <>
+                            <li className='mr-8 hover:text-orange-400'><Link to="/addToys">Add a Toy</Link> </li>
+                            <li className='mr-8 hover:text-orange-400'><Link to="/myToys">My Toys</Link></li>
+                        </>
+                    }
                 </ul>
             </div>
             <div className="navbar-end">
-            <ul className="text-xl menu-horizontal px-1">
-                    <li className='mr-8 hover:text-orange-400'><Link to="/login">Login</Link> </li>
-                    <li className='hover:text-orange-400'><Link to="/register">Register</Link></li>
-                </ul>
+                {
+                    user ? (
+                        <>
+                            {console.log(user)}
+                            <div className=' user-image flex'>
+                                {user.photoURL && <img className='w-12 rounded-full mr-4' src={user.photoURL} alt="" />}
+                                <p className='mr-4 hidden user-name'>{user.displayName}</p>
+                            </div>
+                            <button onClick={logout} className='bg-orange-400 text-white btn'>Logout</button>
+                        </>
+                    )
+                        :
+                        <ul className="text-xl menu-horizontal px-1">
+                            <li className='mr-8 hover:text-orange-400'><Link to="/login">Login</Link> </li>
+                            <li className='hover:text-orange-400'><Link to="/register">Register</Link></li>
+                        </ul>
+                }
             </div>
         </div>
     );
