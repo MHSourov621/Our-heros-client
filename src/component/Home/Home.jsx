@@ -1,12 +1,14 @@
 import React from 'react';
 import Banner from './Banner';
 import Gallery from './Gallery';
+import IconicHero from './IconicHero';
 
 const Home = () => {
     return (
         <>
             <Banner></Banner>
-            <Gallery></Gallery>
+            <IconicHero></IconicHero>
+            {/* <Gallery></Gallery> */}
         </>
 
     );
