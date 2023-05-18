@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddToy = () => {
+    const { user } = useContext(AuthContext);
+
+    const notify = () => toast("New Toy Added successfully");
 
     const handleAddToy = (event) => {
         event.preventDefault();
@@ -12,7 +18,29 @@ const AddToy = () => {
         const rating = form.rating.value;
         const category = form.category.value;
         const quantity = form.quantity.value;
-        console.log(productName, photo, details, price, rating, category, quantity);
+        const name = user.displayName;
+        const email = user.email;
+        const hero = {
+            name, email, productName, photo, details, price, rating, category, quantity
+        }
+
+
+        fetch('http://localhost:5000/products', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(hero)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                form.reset()
+                if (data.insertedId) {
+                    notify()
+                }
+            })
+
     }
 
     return (
@@ -71,6 +99,7 @@ const AddToy = () => {
                     <input className='text-2xl font-semibold text-white w-full py-3 bg-orange-400 hover:bg-orange-500 cursor-pointer rounded-xl' type="submit" value="Add Toy" />
                 </div>
             </form>
+            <ToastContainer />
         </div>
     );
 };
