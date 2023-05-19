@@ -29,7 +29,7 @@ const Navbar = () => {
                     <li className='mr-8 hover:text-orange-400'><Link to="/allToys">All Toys</Link> </li>
                     <li className='mr-8 hover:text-orange-400'><Link to="/Blogs">Blogs</Link></li>
                     {
-                        // user &&
+                        user &&
                         <>
                             <li className='mr-8 hover:text-orange-400'><Link to="/addToy">Add a Toy</Link> </li>
                             <li className='mr-8 hover:text-orange-400'><Link to="/myToy">My Toys</Link></li>
