@@ -19,8 +19,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className='flex items-center'>
-                    <img className='w-20 h-20' src={logo} alt="" />
-                    <a className="text-4xl font-bold">Our <span className='text-orange-400'>Heros</span></a>
+                    <img className='w-24 h-24' src={logo} alt="" />
+                    <a className="text-xl md:text-4xl font-bold">Our <span className='text-orange-400'>Heros</span></a>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -43,9 +43,9 @@ const Navbar = () => {
                             {/* {console.log(user)} */}
                             <div className=' user-image flex'>
                                 {user.photoURL && <img className='w-12 rounded-full mr-4' src={user.photoURL} alt="" />}
-                                <p className='mr-4 hidden user-name'>{user.displayName}</p>
+                                <p className='mr-4 my-auto hidden user-name'>{user.displayName}</p>
                             </div>
-                            <button onClick={logout} className='bg-orange-400 text-white btn'>Logout</button>
+                            <button onClick={logout} className='bg-orange-400 hover:bg-orange-500 text-white btn'>Logout</button>
                         </>
                     )
                         :

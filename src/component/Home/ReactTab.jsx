@@ -12,19 +12,19 @@ const ReactTab = () => {
     const [power, setPower] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/products/Marvel')
+        fetch('http://localhost:5000/category/Marvel')
             .then(res => res.json())
             .then(data => setMarvel(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/products/DC')
+        fetch('http://localhost:5000/category/DC')
             .then(res => res.json())
             .then(data => setDc(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/products/Power')
+        fetch('http://localhost:5000/category/Power')
             .then(res => res.json())
             .then(data => setPower(data))
     }, [])
