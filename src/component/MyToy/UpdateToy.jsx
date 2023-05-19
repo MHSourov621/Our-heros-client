@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const UpdateToy = () => {
     const product = useLoaderData();
     const {_id, details, price, quantity} = product;
-    const notify = () => toast("Update Toy Successfully");
+    const notify = () => toast("Updated Toy Successfully");
     const navigate = useNavigate()
 
     const handleUpdate = (event) => {
@@ -27,7 +27,7 @@ const UpdateToy = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             if(data.modifiedCount > 0){
                 notify()
                 navigate('/myToy')

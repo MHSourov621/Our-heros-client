@@ -11,7 +11,7 @@ const MyToy = () => {
         fetch(`http://localhost:5000/email/${user?.email}`)
         .then(res => res.json())
         .then(data => setHeros(data))
-    },[])
+    },[heros])
     return (
         <div className='mt-20 mb-20'>
             <div className="overflow-x-auto w-full">
@@ -35,6 +35,8 @@ const MyToy = () => {
                             heros.map(hero => <MyToyRow
                                 key={hero._id}
                                 hero={hero}
+                                heros={heros}
+                                setHeros={setHeros}
                             ></MyToyRow>)
                         }
                        
