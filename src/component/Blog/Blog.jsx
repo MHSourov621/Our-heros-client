@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Vlog = () => {
+const Blog = () => {
     return (
         <div className='my-28 px-20'>
             <div className="mb-20 text-center">
@@ -28,4 +28,4 @@ const Vlog = () => {
     );
 };
 
-export default Vlog;
+export default Blog;

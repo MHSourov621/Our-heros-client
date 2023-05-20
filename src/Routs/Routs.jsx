@@ -9,12 +9,14 @@ import ViewDetails from "../component/ViewDetails/ViewDetails";
 import PrivateRoute from "./PrivateRoute";
 import MyToy from "../component/MyToy/MyToy";
 import UpdateToy from "../component/MyToy/UpdateToy";
-import Vlog from "../component/Vlog/Vlog";
+import Blog from "../component/Blog/Blog";
+import Error from "../component/Error/Error";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: "/",
@@ -26,7 +28,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/blogs",
-                element: <Vlog></Vlog>
+                element: <Blog></Blog>
             },
             {
                 path: "/login",
