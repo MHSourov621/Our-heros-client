@@ -9,6 +9,7 @@ import ViewDetails from "../component/ViewDetails/ViewDetails";
 import PrivateRoute from "./PrivateRoute";
 import MyToy from "../component/MyToy/MyToy";
 import UpdateToy from "../component/MyToy/UpdateToy";
+import Vlog from "../component/Vlog/Vlog";
 
 const router = createBrowserRouter([
     {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/blogs",
-                element: <h2>Blogs page here</h2>
+                element: <Vlog></Vlog>
             },
             {
                 path: "/login",
