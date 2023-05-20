@@ -2,7 +2,9 @@ import React from 'react';
 
 const Gallery = () => {
     return (
-        <div className='mb-28 mt-10'>
+        <div data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500" className='mb-28 mt-10'>
             <div className='text-6xl text-orange-500 text-center mb-10'>
                 <h2 className='border-b-2 border-orange-400 inline'>Gallery Section</h2>
             </div>

@@ -2,7 +2,9 @@ import React from 'react';
 
 const WomanHeros = () => {
     return (
-        <div className='mb-28'>
+        <div data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000" className='mb-28'>
             <div className="md:flex md:flex-row-reverse bg-base-100 shadow-xl">
                 <div className="card-body my-auto">
                     <h2 className="card-title text-6xl text-orange-400">Woman Heros Figure</h2>

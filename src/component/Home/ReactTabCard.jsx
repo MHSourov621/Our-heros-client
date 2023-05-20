@@ -27,7 +27,7 @@ const ReactTabCard = ({ hero }) => {
     }
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div data-aos="fade-up-left" className="card w-96 bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
                     <img src={photo} alt="Shoes" className="rounded-xl w-[800px] h-[400px]" />
                 </figure>

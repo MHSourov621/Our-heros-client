@@ -9,8 +9,8 @@ const IconicHero = () => {
             <div className='text-6xl text-orange-500 text-center mb-16'>
                 <h2 className='border-b-2 border-orange-400 inline'>Iconic Hero Figure</h2>
             </div>
-            <div className='grid md:grid-cols-3 md:ml-12'>
-                <div className="card w-96 bg-base-100 shadow-xl">
+            <div data-aos="zoom-in-up" className='grid md:grid-cols-3 md:ml-12'>
+                <div  className="card w-96 bg-base-100 shadow-xl">
                     <figure><img src={img2} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title text-3xl">Iron Man Figure</h2>
