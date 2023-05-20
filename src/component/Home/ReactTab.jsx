@@ -12,19 +12,19 @@ const ReactTab = () => {
     const [power, setPower] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/category/Marvel')
+        fetch('https://our-heros-server.vercel.app/category/Marvel')
             .then(res => res.json())
             .then(data => setMarvel(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/category/DC')
+        fetch('https://our-heros-server.vercel.app/category/DC')
             .then(res => res.json())
             .then(data => setDc(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/category/Power')
+        fetch('https://our-heros-server.vercel.app/category/Power')
             .then(res => res.json())
             .then(data => setPower(data))
     }, [])

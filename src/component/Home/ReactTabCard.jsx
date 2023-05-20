@@ -1,8 +1,30 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const ReactTabCard = ({ hero }) => {
     const { _id, productName, photo, price, rating } = hero;
+    const { user } = useContext(AuthContext);
+    const navigate = useNavigate()
+
+    const handleDetails = (id) => {
+        if (!user?.email) {
+            Swal.fire({
+                title: 'You have to log in first to view details',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            });
+            navigate(`/details/${id}`)
+        }
+        else{
+            navigate(`/details/${id}`)
+        }
+    }
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -16,9 +38,10 @@ const ReactTabCard = ({ hero }) => {
                         <p>Rating: {rating} star</p>
                     </div>
                     <div className="card-actions">
-                        <Link to={`/details/${_id}`}>
+                        {/* <Link to={`/details/${_id}`}>
                             <button className="btn bg-orange-400 hover:bg-orange-500">View Details</button>
-                        </Link>
+                        </Link> */}
+                        <button onClick={() => handleDetails(_id)} className="btn bg-orange-400 hover:bg-orange-500">View Details</button>
                     </div>
                 </div>
             </div>

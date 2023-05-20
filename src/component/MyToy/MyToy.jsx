@@ -8,7 +8,7 @@ const MyToy = () => {
     const {user} = useContext(AuthContext);
 
     useEffect(() =>{
-        fetch(`http://localhost:5000/email/${user?.email}`)
+        fetch(`https://our-heros-server.vercel.app/email/${user?.email}`)
         .then(res => res.json())
         .then(data => setHeros(data))
     },[heros])

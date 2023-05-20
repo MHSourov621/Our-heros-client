@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
     const { emailLogin, googleLogin } = useContext(AuthContext);
@@ -82,7 +81,6 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-            <ToastContainer />
         </div>
     );
 };
