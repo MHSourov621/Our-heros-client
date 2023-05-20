@@ -2,9 +2,11 @@ import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../hooks/useTitle';
 
 const AddToy = () => {
     const { user } = useContext(AuthContext);
+    useTitle('Add a Toy');
 
     const notify = () => toast("New Toy Added successfully");
 

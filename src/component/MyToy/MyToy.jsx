@@ -2,10 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import MyToyRow from './MyToyRow';
 import { ToastContainer, toast } from 'react-toastify';
+import useTitle from '../hooks/useTitle';
 
 const MyToy = () => {
     const [heros, setHeros] = useState([]);
     const {user} = useContext(AuthContext);
+    useTitle('My Toy');
 
     useEffect(() =>{
         fetch(`https://our-heros-server.vercel.app/email/${user?.email}`)

@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import useTitle from '../hooks/useTitle';
 
 const Register = () => {
     const { createUser, updateUserProfile, user } = useContext(AuthContext);
     const [error, setError] = useState('');
+    useTitle('Register');
 
 
     const handleSubmit = (event) => {

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import AllToyRow from './AllToyRow';
+import useTitle from '../hooks/useTitle';
 
 const AllToys = () => {
     const [search, setSearch] = useState();
     const [heros, sethHeros] = useState([]);
     const [sort, setSort] = useState(1);
+    useTitle('All Toys');
 
 
     useEffect(() => {

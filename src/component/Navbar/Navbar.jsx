@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import logo from '../../assets/logo.png'
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext)
@@ -16,6 +17,13 @@ const Navbar = () => {
                         <li className='hover:text-orange-400'><Link to="/">Home</Link></li>
                         <li className='hover:text-orange-400'><Link to="/allToys">All Toys</Link></li>
                         <li className='hover:text-orange-400'><Link to="/Blogs">Blogs</Link></li>
+                        {
+                            user &&
+                            <>
+                                <li className='mr-8 hover:text-orange-400'><Link to="/addToy">Add a Toy</Link> </li>
+                                <li className='mr-8 hover:text-orange-400'><Link to="/myToy">My Toys</Link></li>
+                            </>
+                        }
                     </ul>
                 </div>
                 <div className='flex items-center'>
@@ -25,14 +33,14 @@ const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="text-xl menu-horizontal px-1">
-                    <li className='mr-8 hover:text-orange-400'><Link to="/">Home</Link></li>
-                    <li className='mr-8 hover:text-orange-400'><Link to="/allToys">All Toys</Link> </li>
-                    <li className='mr-8 hover:text-orange-400'><Link to="/Blogs">Blogs</Link></li>
+                    <li className='mr-8 hover:text-orange-400'><ActiveLink to="/">Home</ActiveLink></li>
+                    <li className='mr-8 hover:text-orange-400'><ActiveLink to="/allToys">All Toys</ActiveLink> </li>
+                    <li className='mr-8 hover:text-orange-400'><ActiveLink to="/Blogs">Blogs</ActiveLink></li>
                     {
                         user &&
                         <>
-                            <li className='mr-8 hover:text-orange-400'><Link to="/addToy">Add a Toy</Link> </li>
-                            <li className='mr-8 hover:text-orange-400'><Link to="/myToy">My Toys</Link></li>
+                            <li className='mr-8 hover:text-orange-400'><ActiveLink to="/addToy">Add a Toy</ActiveLink> </li>
+                            <li className='mr-8 hover:text-orange-400'><ActiveLink to="/myToy">My Toys</ActiveLink></li>
                         </>
                     }
                 </ul>
@@ -51,8 +59,8 @@ const Navbar = () => {
                     )
                         :
                         <ul className="text-xl menu-horizontal px-1">
-                            <li className='mr-8 hover:text-orange-400'><Link to="/login">Login</Link> </li>
-                            <li className='hover:text-orange-400'><Link to="/register">Register</Link></li>
+                            <li className='mr-8 hover:text-orange-400'><ActiveLink to="/login">Login</ActiveLink> </li>
+                            <li className='hover:text-orange-400'><ActiveLink to="/register">Register</ActiveLink></li>
                         </ul>
                 }
             </div>

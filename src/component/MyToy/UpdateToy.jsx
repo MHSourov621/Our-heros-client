@@ -2,12 +2,14 @@ import React from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../hooks/useTitle';
 
 const UpdateToy = () => {
     const product = useLoaderData();
     const {_id, details, price, quantity} = product;
     const notify = () => toast("Updated Toy Successfully");
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    useTitle('My Toy / Update');
 
     const handleUpdate = (event) => {
         event.preventDefault();
