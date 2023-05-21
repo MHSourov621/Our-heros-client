@@ -16,7 +16,7 @@ const AddToy = () => {
         const productName = form.name.value;
         const photo = form.photo.value;
         const details = form.details.value;
-        const price = form.price.value;
+        const price = parseInt(form.price.value);
         const rating = form.rating.value;
         const category = form.category.value;
         const quantity = form.quantity.value;
@@ -25,7 +25,6 @@ const AddToy = () => {
         const hero = {
             name, email, productName, photo, details, price, rating, category, quantity
         }
-
 
         fetch('https://our-heros-server.vercel.app/products', {
             method: "POST",
