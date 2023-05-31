@@ -15,7 +15,7 @@ const WomanHeros = () => {
                         <img className='w-[500px] h-[500px] md:border-r-8 md:border-b-8' src="https://www.mythfactoryshop.com/45868-large_default/Captain-Marvel-Premium-Collectibles-Studio-Marvel-future-revolution.jpg" alt="" />
                         <img className='w-[500px] h-[500px] md:border-b-8' src="https://media.karousell.com/media/photos/products/2022/12/2/prime_1_studios_museum_masterl_1669974479_826e12ad_progressive" alt="" />
                         <img className='w-[500px] h-[600px] md:border-r-8 md:p-5' src="https://cdn.popcultcha.com.au/media/catalog/product/cache/207e23213cf636ccdef205098cf3c8a3/h/o/hotmms653_doctor_strange_in_the_multiverse_of_madness_-_the_scarlet_witch_deluxe_1_6th_scale_hot_toys_action_figure.png" alt="" />
-                        <img className='w-[500px] h-[600px] md:p-5' src="https://www.prime1studio.com/media/catalog/product/cache/1/p1s_cropped_image/1400x1955.3072625698/9df78eab33525d08d6e5fb8d27136e95/m/m/mmdc-51lm_cropped.jpg" alt="" />
+                        <img className='w-[500px] h-[600px] md:p-5' src="https://www.superherohype.com/wp-content/uploads/sites/4/2021/07/9fb54340f6ae445bacce83dc13cde7f5lg.jpg" alt="" />
                     </div>
                 </figure>
             </div>
